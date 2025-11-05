@@ -1,6 +1,19 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+# ! python run_short_form_moe_hotpot.py \
+#   --model_name shayekh/openrag_llama2_7b_8x135m \
+#   --world_size 1 --w_use 0.5 \
+#   --dataset shayekh/openrag_bench --task hotpotqa \
+#   --mode adaptive_retrieval --max_new_tokens 100 \
+#   --threshold 0.0 --mode adaptive_retrieval \
+#   --metric hotpotem --ndocs 3 --use_groundness --use_utility --use_seqscore \
+#   --output_file ./eval/hotpotqa.jsonl
+
+# module load Anaconda3
+# conda activate ./.openrag
+# ! python run_short_form_multihop.py --model_name shayekh/openrag_llama2_7b_8x135m --world_size 1 --w_use 0.5 --dataset shayekh/openrag_bench --task hotpotqa --mode adaptive_retrieval --max_new_tokens 100 --threshold 0.0 --metric hotpotem --ndocs 2 --use_groundness --use_utility --use_seqscore --output_file ./eval_th0_beam4_ndocs2/hotpotqa.jsonl
+
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import random
 import torch
